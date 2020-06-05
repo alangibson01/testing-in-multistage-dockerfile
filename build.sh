@@ -9,7 +9,7 @@ build_result=$?
 
 if [ "${build_result}" = "0" ]; then
   # Tests passed, so build and tag the application image without the test stage.
-  docker build -t my-application-image .
+  docker build --target=application -t my-application-image .
   build_result=$?
 fi
 
